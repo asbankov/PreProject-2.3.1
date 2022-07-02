@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Distance</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car, iterStat : ${cars}">
+        <td th:text="${car.getModel()}"></td>
+        <td th:text="${car.getProductionYear()}"></td>
+        <td th:text="${car.getDistance()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
