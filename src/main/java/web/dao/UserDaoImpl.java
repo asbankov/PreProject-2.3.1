@@ -33,11 +33,11 @@ public class UserDaoImpl implements UserDao{
         EntityManagerFactory entityManagerFactory = em.getObject();
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
+        //EntityTransaction transaction = entityManager.getTransaction();
+        //transaction.begin();
         entityManager.persist(user);
-        entityManager.flush();
-        transaction.commit();
+        //entityManager.flush();
+        //transaction.commit();
     }
 
     @Override
@@ -50,12 +50,12 @@ public class UserDaoImpl implements UserDao{
     public User getByID(long id) {
         EntityManagerFactory entityManagerFactory = em.getObject();
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
+        //EntityTransaction transaction = entityManager.getTransaction();
+        //transaction.begin();
         User user = entityManager.find(User.class, id);
-        entityManager.flush();
-        transaction.commit();
-        entityManager.close();
+        //entityManager.flush();
+        //transaction.commit();
+        //entityManager.close();
         return user;
     }
 
@@ -63,23 +63,23 @@ public class UserDaoImpl implements UserDao{
     public void edit(User user) {
         EntityManagerFactory entityManagerFactory = em.getObject();
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
+        //EntityTransaction transaction = entityManager.getTransaction();
+        //transaction.begin();
         entityManager.merge(user);
-        entityManager.flush();
-        transaction.commit();
-        entityManager.close();
+        //entityManager.flush();
+        //transaction.commit();
+        //entityManager.close();
     }
 
     @Override
     public void delete(User user) {
         EntityManagerFactory entityManagerFactory = em.getObject();
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
+        //EntityTransaction transaction = entityManager.getTransaction();
+        //transaction.begin();
         entityManager.remove(entityManager.contains(user) ? user : entityManager.merge(user));
-        entityManager.flush();
-        transaction.commit();
-        entityManager.close();
+        //entityManager.flush();
+        //transaction.commit();
+        //entityManager.close();
     }
 }

@@ -8,12 +8,10 @@ import web.model.User;
 import web.service.UserService;
 import web.service.UserServiceImpl;
 
-import javax.persistence.Access;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class HelloController {
+public class WebPagesController {
 
 	private UserService userService;
 	@Autowired
