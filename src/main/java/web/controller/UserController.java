@@ -6,12 +6,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import web.model.User;
 import web.service.UserService;
-import web.service.UserServiceImpl;
 
 import java.util.List;
 
 @Controller
-public class WebPagesController {
+public class UserController {
 
 	private UserService userService;
 	@Autowired
